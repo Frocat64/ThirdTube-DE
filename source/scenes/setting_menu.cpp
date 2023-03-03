@@ -233,7 +233,7 @@ void Sem_init(void) {
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_JA); },
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_RU); },
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_ES); }
-						}, var_lang == "ja" ? 1 : 0)
+						}, var_lang == "nl" ? 1 : var_lang == "de" ? 2 : var_lang == "fr" ? 3 : var_lang == "it" ? 4 : var_lang == "ja" ? 5 : var_lang == "ru" ? 6 : var_lang == "es" ? 7 : 0)
 						->set_title([](const SelectorView &) { return LOCALIZED(UI_LANGUAGE); })
 						->set_on_change([](const SelectorView &view) {
 							auto next_lang = std::vector<std::string>{"en", "nl" "de", "fr", "it", "ja", "ru", "es"}[view.selected_button];
