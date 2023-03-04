@@ -106,4 +106,3 @@ by Sean Barrett under MIT License and Public Domain
   As a reference about YouTube webpage parsing. It was especially helpful for the deobfuscation of ciphered signatures.  
 * The contributors of [pytube](https://github.com/pytube/pytube)  
   As a reference about YouTube webpage parsing. Thanks to its strict dependency-free policy, I was able to port some of the code without difficulty.  
-
