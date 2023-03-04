@@ -13,13 +13,15 @@ jobs:
     container: devkitpro/devkitarm
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3.3.0
     - name: make
       run: make
     - name: Upload binary
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: Build
         path: |
-          ThirdTube.3dsx
-          ThirdTube.cia
+          ThirdTube-DE.3dsx
+          ThirdTube-DE.cia
+          ThirdTube-DE.elf
+          ThirdTube-DE.smdh

@@ -9,3 +9,5 @@
 *.webm*
 *.s
 *.dmp
+*.out
+*.lst

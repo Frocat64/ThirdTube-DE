@@ -47,19 +47,21 @@ DATA		:=	data
 INCLUDES	:=	source
 GRAPHICS	:=	gfx
 ROMFS		:=	romfs
-LIBRARY := library
+LIBRARY 	:=  library
 GFXBUILD	:=	$(ROMFS)/gfx
 #---------------------------------------------------------------------------------
 APP_VER					:= 83
-APP_TITLE				:= ThirdTube
-APP_DESCRIPTION				:= A YouTube client for the 3DS
+APP_TITLE				:= ThirdTube-DE
+APP_DESCRIPTION			:= A YouTube client for the 3DS
+APP_DESCRIPTION_EN		:= A YouTube client for the 3DS
+APP_DESCRIPTION_DE		:= Ein YouTube-Client für den 3DS
 APP_AUTHOR				:= windows_server_2003
-PRODUCT_CODE				:= CTR-TYT
+PRODUCT_CODE			:= CTR-TYT
 UNIQUE_ID				:= 0xBF74D
 
-BANNER_AUDIO				:= resource/banner.wav
-BANNER_IMAGE				:= resource/banner.png
-ICON        				:= resource/icon.png
+BANNER_AUDIO			:= resource/banner.wav
+BANNER_IMAGE			:= resource/banner.png
+ICON        			:= resource/icon.png
 RSF_PATH				:= resource/app.rsf
 
 #---------------------------------------------------------------------------------
@@ -79,7 +81,7 @@ CXXFLAGS	:= $(CFLAGS) -fno-exceptions -std=gnu++14
 ASFLAGS	:= $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:= -lavfilter -lswresample -lavformat -lswscale -lavcodec -lavutil -lcurl -lbrotli -lnghttp2 -lmbedtls -lmbedx509 -lmbedcrypto -lz  -lcitro2d -lcitro3d -lctru -lm
+LIBS	:= -lavfilter -lswresample -lavformat -lswscale -lavcodec -lavutil -lcurl -lbrotli -lnghttp2 -lmbedtls -lmbedx509 -lmbedcrypto -lz -lcitro2d -lcitro3d -lctru -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -221,7 +223,7 @@ all: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES) $(OBJDIRS)
 	@echo
 	@echo Building cia...
 	@$(BANNERTOOL) makebanner $(BANNER_IMAGE_ARG) $(BANNER_IMAGE) $(BANNER_AUDIO_ARG) $(BANNER_AUDIO) -o $(BUILD)/banner.bnr
-	@$(BANNERTOOL) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
+	@$(BANNERTOOL) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -el "$(APP_DESCRIPTION_EN)" -gl "$(APP_DESCRIPTION_DE)" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
 	@$(MAKEROM) -f cia -o $(OUTPUT).cia -target t -exefslogo $(MAKEROM_ARGS) -ver $(APP_VER)
 
 all_win: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES) $(OBJDIRS)
@@ -230,7 +232,7 @@ all_win: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES) $(OBJDIR
 	@echo
 	@echo Building cia...
 	@$(BANNERTOOL_WIN) makebanner $(BANNER_IMAGE_ARG) $(BANNER_IMAGE) $(BANNER_AUDIO_ARG) $(BANNER_AUDIO) -o $(BUILD)/banner.bnr
-	@$(BANNERTOOL_WIN) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
+	@$(BANNERTOOL_WIN) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -el "$(APP_DESCRIPTION_EN)" -gl"$(APP_DESCRIPTION_DE) -p "$(APP_AUTHOR)" -i $(APP_ICON) -o $(BUILD)/icon.icn
 	@$(MAKEROM_WIN) -f cia -o $(OUTPUT).cia -target t -exefslogo $(MAKEROM_ARGS) -ver $(APP_VER)
 
 $(BUILD):
