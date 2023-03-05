@@ -5,8 +5,8 @@
 <DISABLED>Ausgeschaltet</DISABLED>
 <CANCEL>Abbrechen</CANCEL>
 <OK>OK</OK>
-<PLAY>Abspieln</PLAY>
-<PLAYING>Gerade läuft</PLAYING>
+<PLAY>Abspielen</PLAY>
+<PLAYING>Läuft</PLAYING>
 <URL>URL</URL>
 <SETTINGS>Einstellungen</SETTINGS>
 <WATCH_HISTORY>Mediathek</WATCH_HISTORY>
@@ -75,14 +75,14 @@
 <SUBSCRIBE>Abonnieren</SUBSCRIBE>
 <SUBSCRIBED>Aboniert</SUBSCRIBED>
 <SUBSCRIBER_COUNT>%0 Abonnenten</SUBSCRIBER_COUNT>
-<UNSUBSCRIBE>Deabonnieren</UNSUBSCRIBE> --- UNUSED ----
+<UNSUBSCRIBE>Deabonnieren</UNSUBSCRIBE>
 <SUBSCRIBED_CHANNELS>Abonnierte Kanäle</SUBSCRIBED_CHANNELS>
 <SUBSCRIPTION>Abonnemont</SUBSCRIPTION>
 <NEW_VIDEOS>Neue Videos</NEW_VIDEOS>
 <HOME>Home</HOME>
 <NO_VIDEOS>Keine Videos</NO_VIDEOS>
 <NO_RESULTS>Keine Ergebnisse</NO_RESULTS>
-<SEARCH_HINT>Berühre hier oder drücke A</SEARCH_HINT>
+<SEARCH_HINT>Berühre hier oder drücke A um zu suchen</SEARCH_HINT>
 <GOTO_SEARCH>Suchen</GOTO_SEARCH>
 <EXIT_APP>Die App verlassen</EXIT_APP>
 <ABOUT>Über</ABOUT>
@@ -121,7 +121,7 @@
 <SCROLL_SPEED0>Scrollgeschwindigkeit</SCROLL_SPEED0>
 <SCROLL_SPEED1>Scrollgeschwindigkeit(schnell)</SCROLL_SPEED1>
 <SCROLL_SPEED_THREASHOLD>Beschleunigung des Scrollens um drei Stufen</SCROLL_SPEED_THREASHOLD>
-<COMMUNITY_POST_IMAGE_SIZE>Größe der Bilder im COmmunity Tab</COMMUNITY_POST_IMAGE_SIZE>
+<COMMUNITY_POST_IMAGE_SIZE>Größe der Bilder im Community Tab</COMMUNITY_POST_IMAGE_SIZE>
 <LINEAR_FILTER>Linearer Video Filter</LINEAR_FILTER>
 <NETWORK_FRAMEWORK>Netzwerk Framework</NETWORK_FRAMEWORK>
 <RESTART_TO_APPLY>Neustart zur Anwendung</RESTART_TO_APPLY>
