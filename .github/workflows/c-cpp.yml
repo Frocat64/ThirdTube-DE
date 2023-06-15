@@ -10,7 +10,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: devkitpro/devkitarm:20230403
+    container: devkitpro/devkitarm:20230501
 
     steps:
     - uses: actions/checkout@v3
