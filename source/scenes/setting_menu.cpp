@@ -223,7 +223,7 @@ void Sem_init(void) {
 			(new ScrollView(0, 0, 320, 0))
 				->set_views({
 					// UI language
-					(new VerticalListView(0, 0, 320))
+					(new SelectorView(0, 0, 320, 35))
 						->set_texts({
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_EN); },
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_NL); },
@@ -244,7 +244,7 @@ void Sem_init(void) {
 							}
 						}),
 					// Content language
-					(new VerticalListView(0, 0, 320))
+					(new SelectorView(0, 0, 320, 35))
 						->set_texts({
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_EN); },
 							(std::function<std::string ()>) []() { return LOCALIZED(LANG_NL); },
