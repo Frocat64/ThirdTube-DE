@@ -1,4 +1,4 @@
-﻿<TEST>test</TEST>
+<TEST>test</TEST>
 <ON>On</ON>
 <OFF>Off</OFF>
 <ENABLED>Enabled</ENABLED>

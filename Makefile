@@ -47,27 +47,30 @@ DATA		:=	data
 INCLUDES	:=	source
 GRAPHICS	:=	gfx
 ROMFS		:=	romfs
-LIBRARY := library
+LIBRARY 	:= library
 GFXBUILD	:=	$(ROMFS)/gfx
 #---------------------------------------------------------------------------------
 APP_VER					:= 84
 APP_TITLE				:= ThirdTube
-APP_DESCRIPTION				:= A YouTube client for the 3DS
-APP_DESCRIPTION_JA                      := A YouTube client for the 3DS Japanese
-APP_DESCRIPTION_EN                      := A YouTube client for the 3DS
-APP_DESCRIPTION_FR                      := A YouTube client for the 3DS French
-APP_DESCRIPTION_DE                      := Ein YouTube Client für den 3DS
-APP_DESCRIPTION_IT                      := A YouTube client for the 3DS Italien
-APP_DESCRIPTION_ES                      := A YouTube client for the 3DS Spanish
-APP_DESCRIPTION_NL                      := Een YouTube-client voor de 3DS
-APP_DESCRIPTION_RU                      := A YouTube client for the 3DS Russian
+APP_DESCRIPTION			:= A YouTube client for the 3DS
+APP_DESCRIPTION_JA      := A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_EN      := A YouTube client for the 3DS
+APP_DESCRIPTION_FR      := A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_DE      := Ein YouTube Client für den 3DS
+APP_DESCRIPTION_IT      := A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_ES      := A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_KO		:= A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_NL		:= Een YouTube-client voor de 3DS
+APP_DESCRIPTION_PT		:= A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_RU		:= A YouTube client for the 3DS //TODO
+APP_DESCRIPTION_ZH		:= A YouTube client for the 3DS //TODO
 APP_AUTHOR				:= windows_server_2003
-PRODUCT_CODE				:= CTR-TYT
+PRODUCT_CODE			:= CTR-TYT
 UNIQUE_ID				:= 0xBF74D
 
-BANNER_AUDIO				:= resource/banner.wav
-BANNER_IMAGE				:= resource/banner.png
-ICON        				:= resource/icon.png
+BANNER_AUDIO			:= resource/banner.wav
+BANNER_IMAGE			:= resource/banner.png
+ICON        			:= resource/icon.png
 RSF_PATH				:= resource/app.rsf
 
 #---------------------------------------------------------------------------------
@@ -229,7 +232,7 @@ all: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES) $(OBJDIRS)
 	@echo
 	@echo Building cia...
 	@$(BANNERTOOL) makebanner $(BANNER_IMAGE_ARG) $(BANNER_IMAGE) $(BANNER_AUDIO_ARG) $(BANNER_AUDIO) -o $(BUILD)/banner.bnr
-	@$(BANNERTOOL) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -jl "$(APP_DESCRIPTION_JA)" -el "$(APP_DESCRIPTION_EN)" -fl "$(APP_DESCRIPTION_FR)" -gl "$(APP_DESCRIPTION_DE)" -il "$(APP_DESCRIPTION_IT)" -sl "$(APP_DESCRIPTION_ES)" -dl "$(APP_DESCRIPTION_NL)" -rl "$(APP_DESCRIPTION_RU)" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
+	@$(BANNERTOOL) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -jl "$(APP_DESCRIPTION_JA)" -el "$(APP_DESCRIPTION_EN)" -fl "$(APP_DESCRIPTION_FR)" -gl "$(APP_DESCRIPTION_DE)" -il "$(APP_DESCRIPTION_IT)" -sl "$(APP_DESCRIPTION_ES)" -scl "${APP_DESCRIPTION_SC}" -kl "${APP_DESCRIPTION_KO}" -dl "$(APP_DESCRIPTION_NL)" -pl "${APP_DESCRIPTION_PO}" -rl "$(APP_DESCRIPTION_RU)" -tcl "${APP_DESCRIPTION_TC}" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
 	@$(MAKEROM) -f cia -o $(OUTPUT).cia -target t -exefslogo $(MAKEROM_ARGS) -ver $(APP_VER)
 
 all_win: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES) $(OBJDIRS)
@@ -238,7 +241,7 @@ all_win: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES) $(OBJDIR
 	@echo
 	@echo Building cia...
 	@$(BANNERTOOL_WIN) makebanner $(BANNER_IMAGE_ARG) $(BANNER_IMAGE) $(BANNER_AUDIO_ARG) $(BANNER_AUDIO) -o $(BUILD)/banner.bnr
-	@$(BANNERTOOL_WIN) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -jl "$(APP_DESCRIPTION_JA)" -el "$(APP_DESCRIPTION_EN)" -fl "$(APP_DESCRIPTION_FR)" -gl "$(APP_DESCRIPTION_DE)" -il "$(APP_DESCRIPTION_IT)" -sl "$(APP_DESCRIPTION_ES)" -dl "$(APP_DESCRIPTION_NL)" -rl "$(APP_DESCRIPTION_RU)" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
+	@$(BANNERTOOL_WIN) makesmdh -s "$(APP_TITLE)" -l "$(APP_DESCRIPTION)" -jl "$(APP_DESCRIPTION_JA)" -el "$(APP_DESCRIPTION_EN)" -fl "$(APP_DESCRIPTION_FR)" -gl "$(APP_DESCRIPTION_DE)" -il "$(APP_DESCRIPTION_IT)" -sl "$(APP_DESCRIPTION_ES)" -scl "${APP_DESCRIPTION_SC}" -kl "${APP_DESCRIPTION_KO}" -dl "$(APP_DESCRIPTION_NL)" -pl "${APP_DESCRIPTION_PO}" -rl "$(APP_DESCRIPTION_RU)" -tcl "${APP_DESCRIPTION_TC}" -p $(APP_AUTHOR) -i $(APP_ICON) -o $(BUILD)/icon.icn
 	@$(MAKEROM_WIN) -f cia -o $(OUTPUT).cia -target t -exefslogo $(MAKEROM_ARGS) -ver $(APP_VER)
 
 $(BUILD):
